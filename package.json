@@ -1,0 +1,57 @@
+{
+	"name": "bitcci",
+	"version": "1.0.0",
+	"description": "bitcci Equity Token Contracts",
+	"keywords": [
+		"Ethereum",
+		"Solidity"
+	],
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"compile": "truffle compile",
+		"migrate": "truffle migrate",
+		"reset": "truffle migrate --reset",
+		"console": "truffle console",
+		"fix:js": "eslint --fix test/js/** migrations/**",
+		"lint:js": "eslint test/js/** migrations/**",
+		"lint:sol": "solhint contracts/*.sol contracts/*/*.sol test/*.sol test/*/*.sol",
+		"lint": "npm run lint:js && npm run lint:sol",
+		"publish": "truffle publish",
+		"test": "truffle test",
+		"deploy:rinkeby": "truffle migrate --network rinkeby --reset",
+		"setup:hooks": "ln -s ../../scripts/git-hooks/pre-commit.sh .git/hooks/pre-commit",
+		"solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
+		"prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
+		"setup:mythril": "docker pull mythril/myth",
+		"setup:surya": "npm install -g surya && brew install graphviz"
+	},
+	"dependencies": {
+		"@truffle/hdwallet-provider": "^1.0.44",
+		"bn.js": "^4.11.8",
+		"dotenv": "^6.0.0",
+		"lodash": "^4.17.11",
+		"openzeppelin-solidity": "2.2.0",
+		"solc": "^0.7.1",
+		"solidity-coverage": "^0.7.22"
+	},
+	"devDependencies": {
+		"csv-parse": "^4.3.4",
+		"eslint": "^7.10.0",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-config-airbnb-base": "^14.2.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-mocha": "^4.11.0",
+		"eslint-plugin-node": "^5.1.0",
+		"eslint-plugin-react": "^7.5.1",
+		"fs": "0.0.1-security",
+		"get-stream": "^5.0.0",
+		"minimist": "^1.2.0",
+		"prettier": "^2.1.2",
+		"prettier-plugin-solidity": "^1.0.0-alpha.58",
+		"solhint": "^3.2.1",
+		"solhint-plugin-prettier": "0.0.5"
+	}
+}
